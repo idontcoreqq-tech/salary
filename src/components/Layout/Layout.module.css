@@ -1,0 +1,26 @@
+/* Корневой контейнер layout */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Основной контент */
+.main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+/* Внутренний контейнер для центрирования контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .main {
+    padding: var(--spacing-md) 0;
+  }
+}
