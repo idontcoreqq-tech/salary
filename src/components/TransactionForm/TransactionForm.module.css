@@ -1,0 +1,158 @@
+/* Контейнер формы */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Сетка полей */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Группа поля */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Группа на всю ширину */
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+/* Подпись поля */
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Поле ввода */
+.input,
+.select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Textarea для комментария */
+.textarea {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Переключатель типа операции */
+.typeSwitcher {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.typeButton {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.typeButton:hover {
+  border-color: var(--text-secondary);
+}
+
+.typeButtonActiveIncome {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+  color: white;
+}
+
+.typeButtonActiveExpense {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger);
+  color: white;
+}
+
+/* Панель кнопок */
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Кнопка */
+.button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttonPrimary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.buttonSecondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.buttonSecondary:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-direction: column-reverse;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}

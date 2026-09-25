@@ -1,0 +1,73 @@
+/* Контейнер страницы */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Заголовок страницы */
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Сетка карточек баланса */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Секция последних операций */
+.recentSection {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Заголовок секции */
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Кнопка добавления операции */
+.addButton {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .addButton {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+}

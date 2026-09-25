@@ -1,0 +1,159 @@
+/* Контейнер списка */
+.list {
+  width: 100%;
+}
+
+/* Заголовок таблицы */
+.header {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 120px 100px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Строка операции */
+.row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 120px 100px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+  align-items: center;
+}
+
+.row:hover {
+  background-color: var(--bg-secondary);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+/* Ячейка */
+.cell {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+/* Дата */
+.date {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Категория */
+.category {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.categoryIcon {
+  font-size: 20px;
+}
+
+.categoryName {
+  font-weight: 500;
+}
+
+/* Комментарий */
+.comment {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Сумма */
+.amount {
+  font-weight: 600;
+  text-align: right;
+}
+
+.amountIncome {
+  color: var(--color-success);
+}
+
+.amountExpense {
+  color: var(--color-danger);
+}
+
+/* Действия */
+.actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  justify-content: flex-end;
+}
+
+.actionButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.editButton:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+  }
+  
+  .cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+  }
+  
+  .amount {
+    text-align: left;
+  }
+  
+  .actions {
+    justify-content: flex-start;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+  }
+}
